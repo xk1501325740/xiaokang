@@ -23,6 +23,7 @@ define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/../vendor/autoload.php';
 
+require __DIR__.'/../extends/php-sdk-7.2.7/autoload.php';
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights

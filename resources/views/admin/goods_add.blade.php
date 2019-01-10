@@ -38,7 +38,7 @@
 
         <div class="layui-form-item">
             <label class="layui-form-label">商品图片</label>
-            <input type="file" name="name">
+            <input type="file" name="tupian[]">
         </div>
 
 
@@ -70,21 +70,35 @@
         </div>
         </div>
 
-
+        {{--上传多图片--}}
         <div class="layui-form-item">
-            <label class="layui-form-label">状态</label>
-            <div class="layui-input-block">
-                <input type="checkbox" name="goods_status"  lay-skin="switch" lay-text="上架|下架">
-
+            <label class="layui-form-label">附加图片</label>
+            <font class="layui-btn layui-btn-primary layui-btn-sm" id="tupian">添加图片</font>
+            <div class="layui-tab layui-tab-card"  id="sctup" style="">
+                <div class="tt">
+                    图片: <input type="file" name="tupian[]" style="border: solid red 1px"><a href="javascript:;" class="jia"> [+]</a>
+                    <br>
+                </div>
 
             </div>
         </div>
 
 
-        <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">普通文本域</label>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
             <div class="layui-input-block">
-                <textarea placeholder="请输入内容" name="text" class="layui-textarea"></textarea>
+                <input type="checkbox" name="goods_status"  lay-skin="switch" lay-text="上架|下架">
+            </div>
+        </div>
+
+
+        <div class="layui-form-item layui-form-text">
+            <div class="layui-tab-content" >
+            <script id="container" name="content" type="text/plain"></script>
+            <div id="editor">
+
+            </div>
+                <textarea id="text1"  name="text_values"  ></textarea>
             </div>
         </div>
 
@@ -95,12 +109,27 @@
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>
+
     </form>
    <script>
+       var E = window.wangEditor
+       var editor = new E('#editor')
+       var $text1 = $('#text1')
+       editor.customConfig.onchange = function (html) {
+           // 监控变化，同步更新到 textarea
+           $text1.val(html)
+       }
+       editor.create()
+
+
        $(function(){
            $('#scguige').hide();
+           $('#sctup').hide();
+           $('#text1').hide();
+
            //生产规格
              $('#sku').click(function(){
+
                 $('#scguige').show()
              })
            //添加规格格子
@@ -113,9 +142,22 @@
                      "");
              })
 
+           //生产规格
+           $('#tupian').click(function(){
+
+               $('#sctup').show()
+           })
+           //添加规格格子
+           $('.jia').click(function(){
+               $(".tt").append(" 规格名称: <input type='file'name='tupian[]'>" +
+                   "<br>" +
+                   "");
+           })
+
 
 
        })
+       $text1.val(editor.txt.html())
 
         layui.use(['form', 'layedit', 'laydate','upload'], function(){
             var form = layui.form
