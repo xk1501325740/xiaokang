@@ -8,8 +8,9 @@ use App\Http\Controllers\Controller;
 class AdminController extends Controller
 {
     //展示数据
-	public function admin_list(){
-		echo 1;
+
+    public function admin_list(){
+         echo 1;
 
         return view('admin.admin-list');
     }
