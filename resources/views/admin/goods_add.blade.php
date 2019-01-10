@@ -8,7 +8,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">商品名称</label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入标题"  class="layui-input">
             </div>
         </div>
 
@@ -24,7 +24,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">分类</label>
             <div class="layui-input-block">
-                <select name="interest" lay-filter="aihao">
+                <select name="cate" lay-filter="aihao">
                     <option value=""></option>
                     <option value="0">写作</option>
                     <option value="1" selected="">阅读</option>
@@ -46,7 +46,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">品牌</label>
             <div class="layui-input-block">
-                <select name="interest" lay-filter="aihao">
+                <select name="p">
                     <option value=""></option>
                     <option value="0">写作</option>
                     <option value="1" selected="">阅读</option>
@@ -57,13 +57,26 @@
             </div>
         </div>
 
-
+        {{--规格--}}
+        <div class="layui-form-item">
+            <label class="layui-form-label">规格</label>
+            <font class="layui-btn layui-btn-primary layui-btn-sm" id="sku">生产规格</font>
+            <div class="layui-tab layui-tab-card"  id="scguige" style="">
+                <div class="cc">
+                规格名称: <input type="text" name="attr_name[]" style="border: solid red 1px">规格属性:<input type="text" name="attr_values[]"  style="border: solid red 1px"><a href="javascript:;" class="jiajia"> [+]</a>
+                    <br>
+                </div>
+               
+        </div>
+        </div>
 
 
         <div class="layui-form-item">
             <label class="layui-form-label">状态</label>
             <div class="layui-input-block">
-                <input type="checkbox" name="close" lay-skin="switch" lay-text="上架|下架">
+                <input type="checkbox" name="goods_status"  lay-skin="switch" lay-text="上架|下架">
+
+
             </div>
         </div>
 
@@ -71,7 +84,7 @@
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">普通文本域</label>
             <div class="layui-input-block">
-                <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                <textarea placeholder="请输入内容" name="text" class="layui-textarea"></textarea>
             </div>
         </div>
 
@@ -84,6 +97,26 @@
         </div>
     </form>
    <script>
+       $(function(){
+           $('#scguige').hide();
+           //生产规格
+             $('#sku').click(function(){
+                $('#scguige').show()
+             })
+           //添加规格格子
+             $('.jiajia').click(function(){
+                 $(".cc").append(" 规格名称: <input type='text'name='attr_name[]' style='border: solid red 1px'>" +
+                     "规格属性:<input type='text'name='attr_values[]'  style='border: solid red 1px'>" +
+                     "<a href='javascript:;'   class='jiajia'></a>" +
+                     "<br>" +
+
+                     "");
+             })
+
+
+
+       })
+
         layui.use(['form', 'layedit', 'laydate','upload'], function(){
             var form = layui.form
                 ,layer = layui.layer

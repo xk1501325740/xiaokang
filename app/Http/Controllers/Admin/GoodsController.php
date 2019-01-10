@@ -13,9 +13,8 @@ class GoodsController extends Controller
 
         return view('admin.goods-list');
 
-
-
     }
+
 
     public function goods_onedata(Request $request){
        $name =  $request->get('goods_name');
@@ -57,12 +56,12 @@ class GoodsController extends Controller
 
     //添加
     public function goods_adds(Request $request){
+
         if( $request->isMethod('post')){
-           var_dump($request->post());
+            var_dump($request->post());
+            var_dump( $request->file('name'));
         }
-
-
-        var_dump( $request->file('name'));die;
+        die;
 
 
     }
