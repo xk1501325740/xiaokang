@@ -8,7 +8,9 @@
 
     <link href="{{asset('admin/css/public.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('admin/css/public.css')}}" rel="stylesheet" type="text/css">
+
     <script type="text/javascript" src="{{asset('admin/js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/wangEditor.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('admin/js/global.js')}}"></script>
     <link rel="stylesheet" href="{{asset('layui/css/layui.css')}}/"  media="all">
     <script src="{{asset('layui/layui.js')}}" charset="utf-8"></script>
