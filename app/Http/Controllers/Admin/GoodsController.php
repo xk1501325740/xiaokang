@@ -63,8 +63,8 @@ class GoodsController extends Controller
             var_dump($request->post());
             $file =  $_FILES;
             $file_name = $file['tupian']['tmp_name'] ;
-
-            $this->phone_img($file['name']['tmp_name']);
+            var_dump(  $file_name );
+            //$this->phone_img();
         }
         die;
 

@@ -38,7 +38,7 @@
 
         <div class="layui-form-item">
             <label class="layui-form-label">商品图片</label>
-            <input type="file" name="name">
+            <input type="file" name="tupian[]">
         </div>
 
 
