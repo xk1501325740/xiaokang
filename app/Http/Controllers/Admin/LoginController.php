@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\models\Admin;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class LoginController extends Controller
+{
+   //登陆页面
+    public function login(){
+
+        return view('admin.login');
+    }
+
+
+    //极验
+    public function jydl(){
+
+        $GtSdk = new \GeetestLib(CAPTCHA_ID, PRIVATE_KEY);
+        session_start();
+
+        $data = array(
+            "user_id" => "test", # 网站用户id
+            "client_type" => "web", #web:电脑上的浏览器；h5:手机上的浏览器，包括移动应用内完全内置的web_view；native：通过原生SDK植入APP应用的方式
+            "ip_address" => "127.0.0.1" # 请在此处传输用户请求验证时所携带的IP
+        );
+
+        $status = $GtSdk->pre_process($data, 1);
+        $_SESSION['gtserver'] = $status;
+        $_SESSION['user_id'] = $data['user_id'];
+        echo $GtSdk->get_response_str();
+
+    }
+
+    //登陆验证
+    public function login_yz(Request $request){
+        $login = new admin();
+        session(['name' => $request->get('name')]);
+       $res = $login->login( $request->get('name'), $request->get('pwd'));
+        if( $res ){
+          echo '成功';
+        }else{
+          echo '失败';
+        }
+
+    }
+
+
+
+}

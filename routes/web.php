@@ -22,6 +22,12 @@ Route::get('/ceshi', function () {
 Route::get('/user','User1Controller@abc');
 //后台管理
 Route::group(['namespace' => 'Admin'], function(){
+    //后台登陆
+    Route::any('admin/login_index','LoginController@login');
+    Route::any('admin/login_yz','LoginController@jydl');
+    Route::any('admin/login_yzz','LoginController@login_yz');
+
+
      //首页
     Route::any('admin/index','IndexController@index_List');
     Route::any('admin/index-add','IndexController@index_add');
@@ -70,10 +76,14 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/del','UserController@user_del');
 
     //分类
-    Route::get('admin/list','CategoryController@category_list');
+    Route::get('admin/cate_list','CategoryController@category_list');
     Route::get('admin/add','CategoryController@category_add');
-    Route::get('admin/set','CategoryController@category_set');
+    Route::any('admin/add_sub','CategoryController@category_add_sub');
+
+    Route::any('admint','CategoryController@category_set');
+    Route::any('admint_sub','CategoryController@category_set_sub');
     Route::get('admin/del','CategoryController@category_del');
+
 
 
 });

@@ -1,6 +1,8 @@
 @extends('app')
 
 @section('') @show
+@section('biaoti', '分类修改')
+
 @section('button1')
 @parent
         <!doctype html>

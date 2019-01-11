@@ -10,7 +10,7 @@ class IndexController extends Controller
     //展示数据
     public function index_List(){
 
-            return view('admin.abc');
+            return view('admin.index_list');
 
     }
 

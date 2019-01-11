@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('') @show
+@section('biaoti', '商品管理')
 @section('button1')
     @parent
     <div class="layui-tab layui-tab-card" lay-filter="goods-tab">

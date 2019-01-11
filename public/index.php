@@ -24,6 +24,8 @@ define('LARAVEL_START', microtime(true));
 require __DIR__.'/../vendor/autoload.php';
 
 require __DIR__.'/../extends/php-sdk-7.2.7/autoload.php';
+require __DIR__.'/../extends/jy/config/config.php';
+require __DIR__.'/../extends/jy/lib/class.geetestlib.php';
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
