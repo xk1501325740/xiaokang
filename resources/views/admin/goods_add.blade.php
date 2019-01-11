@@ -8,23 +8,81 @@
         <div class="layui-form-item">
             <label class="layui-form-label">商品名称</label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入标题"  class="layui-input">
+                <input type="text" name="goods_name" lay-verify="required" autocomplete="off" placeholder="请输入标题"  class="layui-input">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">品牌ID</label>
             <div class="layui-input-block">
-                <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                <input type="text" name="brand_id" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">库存</label>
+                    <div class="layui-input-block">
+                        <div class="layui-input-inline">
+                            <input type="text" name="stock"  class="layui-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">市场价格</label>
+                    <div class="layui-input-block">
+                        <div class="layui-input-inline">
+                            <input type="text" name="market_price"  class="layui-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">销售价格</label>
+                    <div class="layui-input-block">
+                        <div class="layui-input-inline">
+                            <input type="text" name="price"  class="layui-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">验证日期</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="info_date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">供应商ID</label>
+                    <div class="layui-input-block">
+                        <div class="layui-input-inline">
+                            <input type="text" name="supplier_id"  class="layui-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
 
 
 
         <div class="layui-form-item">
             <label class="layui-form-label">分类</label>
             <div class="layui-input-block">
-                <select name="cate" lay-filter="aihao">
+                <select name="cate_id" lay-filter="aihao">
                     <option value=""></option>
                     <option value="0">写作</option>
                     <option value="1" selected="">阅读</option>
@@ -46,7 +104,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">品牌</label>
             <div class="layui-input-block">
-                <select name="p">
+                <select name="brand_id">
                     <option value=""></option>
                     <option value="0">写作</option>
                     <option value="1" selected="">阅读</option>
@@ -59,7 +117,7 @@
 
         {{--规格--}}
         <div class="layui-form-item">
-            <label class="layui-form-label">规格</label>
+            <label class="layui-form-label" >规格</label>
             <font class="layui-btn layui-btn-primary layui-btn-sm" id="sku">生产规格</font>
             <div class="layui-tab layui-tab-card"  id="scguige" style="">
                 <div class="cc">
@@ -76,7 +134,7 @@
             <font class="layui-btn layui-btn-primary layui-btn-sm" id="tupian">添加图片</font>
             <div class="layui-tab layui-tab-card"  id="sctup" style="">
                 <div class="tt">
-                    图片: <input type="file" name="tupian[]" style="border: solid red 1px"><a href="javascript:;" class="jia"> [+]</a>
+                    图片: <input type="file" name="tupian[]" style="border: solid green 1px"><a href="javascript:;" class="jia"> [+]</a>
                     <br>
                 </div>
 
@@ -98,7 +156,7 @@
             <div id="editor">
 
             </div>
-                <textarea id="text1"  name="text_values"  ></textarea>
+                <textarea id="text1"  name="info_desc"  ></textarea>
             </div>
         </div>
 
@@ -131,26 +189,33 @@
              $('#sku').click(function(){
 
                 $('#scguige').show()
+                 $(this).css('border-color','red')
+                 $(this).text('禁止点击')
+                 $(this).preventDefault();
              })
            //添加规格格子
              $('.jiajia').click(function(){
-                 $(".cc").append(" 规格名称: <input type='text'name='attr_name[]' style='border: solid red 1px'>" +
-                     "规格属性:<input type='text'name='attr_values[]'  style='border: solid red 1px'>" +
+                 $(".cc").append(" 规格名称: <input type='text'name='attr_name[]' style='border: solid green 1px'>" +
+                     "规格属性:<input type='text'name='attr_values[]'  style='border: solid green 1px'>" +
                      "<a href='javascript:;'   class='jiajia'></a>" +
                      "<br>" +
 
                      "");
              })
 
-           //生产规格
+           //生成多图片
            $('#tupian').click(function(){
 
                $('#sctup').show()
+               $(this).css('border-color','red')
+               $(this).text('禁止点击')
+               $(this).preventDefault();
            })
            //添加规格格子
            $('.jia').click(function(){
-               $(".tt").append(" 规格名称: <input type='file'name='tupian[]'>" +
+               $(".tt").append(" 图片名称: <input type='file'  style='border: solid green 1px' name='tupian[]'>" +
                    "<br>" +
+                   ""+
                    "");
            })
 

@@ -38,8 +38,8 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::any('admin/goods-onedata','GoodsController@goods_onedata');
     Route::any('admin/goods_add','GoodsController@goods_add');
     Route::any('admin/goods_adds','GoodsController@goods_adds');
-    Route::get('admin/set','GoodsController@goods_set');
-    Route::get('admin/del','GoodsController@goods_del');
+    Route::get('admin/goods_set','GoodsController@goods_set');
+    Route::get('admin/goods_del','GoodsController@goods_del');
 
     //品牌
     Route::get('admin/brand-list','BrandController@brand_List');
