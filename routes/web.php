@@ -38,8 +38,8 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::any('admin/goods-onedata','GoodsController@goods_onedata');
     Route::any('admin/goods_add','GoodsController@goods_add');
     Route::any('admin/goods_adds','GoodsController@goods_adds');
-    Route::get('admin/set','GoodsController@goods_set');
-    Route::get('admin/del','GoodsController@goods_del');
+    Route::get('admin/goods_set','GoodsController@goods_set');
+    Route::get('admin/goods_del','GoodsController@goods_del');
 
     //品牌
     Route::get('admin/brand-list','BrandController@brand_List');
@@ -54,10 +54,14 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/del','OrderController@order_del');
 
     //权限
-    Route::get('admin/pression-list','PressionController@pression_List');
-    Route::get('admin/add','PressionController@pression_add');
-    Route::get('admin/set','PressionController@pression_set');
-    Route::get('admin/del','PressionController@pression_del');
+    Route::get('admin/pression-list','PressionController@pression_List');//权限列表
+    Route::get('admin/pression-allot','PressionController@pression_allot');//权限分配表单
+    Route::post('admin/pallot','PressionController@pallot');//权限分配
+    Route::post('admin/pression-che','PressionController@pression_che');//根据下拉框判断多选框
+    Route::get('admin/admin-form','PressionController@adminadd_form');//用户新增表单
+    Route::post('admin/adminadd','PressionController@adminadd');//用户新增
+    Route::get('admin/adminup','PressionController@admin_upform');//用户编辑表单
+    Route::get('admin/roleadd','PressionController@roleadd_form');//角色新增表单
 
     //用户
     Route::get('admin/user-list','UserController@user_list');

@@ -71,14 +71,14 @@
                                          ,{field:'cate_id', title:'分类', align: 'center',width:100
                                          }
                                          ,{field:'goods_code', title:'商品编码',align: 'center', width:120, edit: 'text', sort: true}
-                                         ,{field:'goods_name', title:'商品名称',align: 'center', width:120}
+                                         ,{field:'goods_name', title:'商品名称',align: 'center', edit: 'text',width:120}
                                          ,{field:'info_desc', title:'商品详情',align: 'center', edit: 'text',width:120}
                                          ,{field:'coment_count', title:'评论总次数',align: 'center', width:120, sort: true}
                                          ,{field:'info_date', title:'商品生产日期',align: 'center', width:120, sort: true}
                                          ,{field:'supplier_id', title:'商品供应商',align: 'center', width:120}
-                                         ,{field:'price', title:'商销售价格',align: 'center',width:120, sort: true}
-                                         ,{field:'market_price', title:'商品价格',align: 'center', width:120, sort: true}
-                                         ,{field:'stock', title:'商品库存',align: 'center', width:120}
+                                         ,{field:'price', title:'商销售价格',align: 'center', edit: 'text',width:120, sort: true}
+                                         ,{field:'market_price', title:'商品价格', edit: 'text',align: 'center', width:120, sort: true}
+                                         ,{field:'stock', title:'商品库存', edit: 'text',align: 'center', width:120}
                                          ,{field:'goods_status', title:'状态', align: 'center',width:120,
                                              templet: '#switchTpl', unresize: true}
                                          ,{field:'audit_status', title:'审核',align: 'center',width:120,templet: '#audit_status', unresize: true}
@@ -90,9 +90,13 @@
                                  });
 
                                  table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
+                                     console.log(obj.data.goods_id);
                                      console.log(obj.value); //得到修改后的值
                                      console.log(obj.field); //当前编辑的字段名
-                                    // console.log(obj.data); //所在行的所有相关数据
+                                     $.ajax({
+                                         method: "get",
+                                         url: "goods_set",
+                                         data: { id:obj.data.goods_id,filed: obj.field,value:obj.value }                                                                           })
                                  });
 
                                  $('#do_search').on('click', function () {
@@ -145,15 +149,21 @@
                                  //监听行工具事件
                                  table.on('tool(test)', function(obj){
                                      var data = obj.data;
-                                     //console.log(obj)
+
                                      if(obj.event === 'del'){
                                          layer.confirm('真的删除行么', function(index){
                                              obj.del();
                                              layer.close(index);
+                                             $.ajax({
+                                                   method: "get",
+                                                   url: "goods_del",
+                                                   data: { id: data.goods_id }                                                                           }).done(function( msg ) {
+                                                       // alert(msg)
+                                                 });
 
-                                             console.log(index)
                                          });
                                      } else if(obj.event === 'edit'){
+
                                          layer.prompt({
                                              formType: 2
                                              ,value: data.info_desc
@@ -162,7 +172,15 @@
                                                  info_desc:value
                                              });
                                              layer.close(index);
-                                             console.log(index+'***'+value)
+
+                                             //console.log(index+'***'+value)
+                                             $.ajax({
+                                                 method: "get",
+                                                 url: "goods_set",
+                                                 data: { id:obj.data.goods_id,filed: 'info_desc',value:value }                                                                           }).done(function(res){
+                                                     console.log(res)
+                                             })
+
                                          });
                                      }
                                  });
