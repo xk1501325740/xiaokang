@@ -54,6 +54,11 @@
                     <li><a href="pression-allot"><i class="nav"></i><em>权限分配</em></a></li>
                     <li><a href="page.html"><i class="page"></i><em>待定</em></a></li>
                 </ul>
+                <ul>
+                    <li><a href="comment-list"><i class="system"></i><em>用户评论</em></a></li>
+                    <li><a href="comment-list"><i class="system"></i><em>评论列表</em></a></li>
+
+                </ul>
             </div></div>
         <div id="dcMain"> <!-- 当前位置 -->
             <div id="urHere">DouPHP 管理中心- @yield('biaoti')</div>  <div id="index" class="mainBox" style="padding-top:18px;height:auto!important;height:550px;min-height:550px;">
