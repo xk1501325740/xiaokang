@@ -127,7 +127,37 @@ Route::group(['namespace' => 'Admin'], function(){
 
 
 Route::group(['namespace' => 'Home'], function(){
-    // 控制器在 "App\Http\Controllers\Home" 命名空间下
+    Route::get('home/login','loginController@login');
+    Route::get('home/login_sub','loginController@login_sub');
+    //注册
+    Route::get('home/regist','loginController@regist');
+    Route::get('home/regist_sub','loginController@regist_sub');
+    //前台
+    Route::get('home/index','indexController@index');
+    Route::get('home/produce','indexController@produce');
+    //购物车//生成订单//提交订单
+    Route::get('home/buycar','buycarController@buycar');
+    Route::get('home/buycar_two','buycarController@buycar_two');
+    Route::get('home/buycar_three','buycarController@buycar_three');
+    //品牌
+    Route::get('home/brand','brandController@brand');
+    Route::get('home/brand_list','brandController@brand_list');
+    /*//分类
+    Route::get('home/category','brandController@category');
+    Route::get('home/category_list','brandController@category_list');
+    //个人管理中心
+    Route::get('home/member','memberController@member');
+    //个人地址管理
+    Route::get('home/member_address','memberController@member_address');
+    //会员
+    Route::get('home/member_member','memberController@member_member');
+    Route::get('home/member_member_links','memberController@member_member_list');
+    Route::get('home/member_money','memberController@member_money');
+    //留言
+    Route::get('home/member_msg','memberController@member_msg');
+    //合并订单
+    Route::get('home/member_order','memberController@member_order');*/
+
 });
 
 
