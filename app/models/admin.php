@@ -12,6 +12,7 @@ class admin extends Model
 
     //登陆
     public function login($name,$pwd){
+
         return DB::table('admin')->where([
             ['username', '=', $name],
             ['password', '=', $pwd],

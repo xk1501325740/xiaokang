@@ -185,7 +185,7 @@
                       data: { name:   $('#user_name').val(), pwd:   $('#password').val() }
                 }).done(function( msg ) {
                      if(msg =='成功'){
-                        location.href='index'
+                        location.href='pression-index'
                      }else{
 
                      }

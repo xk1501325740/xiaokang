@@ -39,9 +39,11 @@ class LoginController extends Controller
     //登陆验证
     public function login_yz(Request $request){
         $login = new admin();
+
         session(['name' => $request->get('name')]);
         Redis::set('name',$request->get('name')); #输出testRedis
        $res = $login->login( $request->get('name'), $request->get('pwd'));
+
         if( $res ){
           echo '成功';
         }else{

@@ -98,6 +98,14 @@ Route::group(['namespace' => 'Admin'], function(){
         Route::post('role_preadd','PressionController@role_preadd');//角色新增
     });
 
+    //评论
+    Route::prefix('admin')->group(function (){
+        Route::get('comment-list','CommentController@comment_list');//评论展示
+        Route::get('comment-editform','CommentController@comment_editform');//评论查看表单
+        Route::post('comment-edit','CommentController@comment_edit');//追加评论
+    });
+
+
 
 
     //用户
