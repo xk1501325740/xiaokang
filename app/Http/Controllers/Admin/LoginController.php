@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
 
 class LoginController extends Controller
 {
+
    //登陆页面
     public function login(){
 
@@ -38,6 +40,7 @@ class LoginController extends Controller
     public function login_yz(Request $request){
         $login = new admin();
         session(['name' => $request->get('name')]);
+        Redis::set('name',$request->get('name')); #输出testRedis
        $res = $login->login( $request->get('name'), $request->get('pwd'));
         if( $res ){
           echo '成功';
@@ -46,6 +49,12 @@ class LoginController extends Controller
         }
 
     }
+
+
+
+
+
+
 
 
 

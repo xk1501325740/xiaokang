@@ -5,14 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>DouPHP 管理中心</title>
     <meta name="Copyright" content="Douco Design." />
-
     <link href="{{asset('admin/css/public.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('admin/css/public.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{asset('layui/css/layui.css')}}"  media="all">
     <script type="text/javascript" src="{{asset('admin/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('admin/js/wangEditor.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('admin/js/global.js')}}"></script>
-
     <script src="{{asset('layui/layui.js')}}" charset="utf-8"></script>
 </head>
 <body>

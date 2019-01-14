@@ -6,11 +6,21 @@ use App\Http\Model\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
-class CategoryController extends Controller
+use App\models\admin;
+use App\models\Admin_role;
+use App\models\Role_pression;
+class CategoryController extends CeshiController
 {
+    public function __construct(Request $request)
+    {
+        parent::__construct($request);
+
+    }
+
     //展示分类数据
     public function category_list(){
+
+
         $tab = new Category();
         $res=$tab->show();
         return view('admin.category_list',['data'=>$res]);
@@ -28,7 +38,8 @@ class CategoryController extends Controller
         $data['category_name'] = $request->post('category_name');
         $data['category_code'] = $request->post('category_code');
         $data['parent_id'] = $request->post('parent_id');
-        $data['category_level'] = $request->post('category_level');
+        $data['category_level'] = $request->post('category_level')
+        ;
         $data['modified_time'] = date('Y-h-d:H-i-s');
         $data['category_status'] = $request->post('category_status');
         if(empty($data['category_name'])){ echo "<script>alert('不能为空1');location.href='http://shops.com/admin/add'</script>"; }

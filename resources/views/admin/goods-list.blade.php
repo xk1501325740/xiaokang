@@ -42,6 +42,7 @@
                          </script>
 
                          <script type="text/html" id="barDemo">
+                             <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
                              <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
                              <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
                          </script>
@@ -85,7 +86,7 @@
                                          ,{field:'audit_status', title:'审核',align: 'center',width:120,templet: '#audit_status', unresize: true}
                                          ,{field:'create_time', title:'创建时间',align: 'center', width:120}
                                          ,{field:'update_time', title:'修改时间',align: 'center',width:120}
-                                         ,{fixed: 'right', title:'操作',align: 'center', toolbar: '#barDemo', width:150}
+                                         ,{fixed: 'right', title:'操作',align: 'center', toolbar: '#barDemo', width:200}
                                      ]]
 
                                  });
@@ -183,6 +184,8 @@
                                              })
 
                                          });
+                                     }else if(obj.event === 'detail'){
+                                         alert(123)
                                      }
                                  });
                              });

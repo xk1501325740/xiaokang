@@ -4,13 +4,18 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
 
 class IndexController extends Controller
 {
+
+
+
     //展示数据
     public function index_List(){
 
-            return view('admin.index_list');
+
+            return view('app');
 
     }
 

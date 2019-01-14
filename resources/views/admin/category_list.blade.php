@@ -37,7 +37,7 @@
                     </a></td>
                 <td align="center">{{str_repeat('--',$v['category_level'])}}{{$v['category_name']}}</td>
                 <td align="center">
-                    <a href="set?id={{$v['category_id']}}">编辑</a> | <a href="del?id={{$v['category_id']}}">删除</a>
+                    <a href="cate_set?id={{$v['category_id']}}">编辑</a> | <a href="del?id={{$v['category_id']}}">删除</a>
                 </td>
             </tr>
         @endforeach

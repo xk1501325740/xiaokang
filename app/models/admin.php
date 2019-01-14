@@ -17,4 +17,11 @@ class admin extends Model
             ['password', '=', $pwd],
         ])->get();
     }
+
+    //验证
+    public function login_yz($name){
+        return admin::select()->where([
+            ['username', '=',$name],
+        ])->get()->toArray();
+    }
 }
