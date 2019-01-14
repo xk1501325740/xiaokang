@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('') @show
+@section('biaoti', '商品添加')
 @section('button1')
     @parent
     <form class="layui-form" action="goods_adds" method="post" enctype="multipart/form-data">

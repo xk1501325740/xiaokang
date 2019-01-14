@@ -5,17 +5,36 @@ namespace App\Http\Controllers\admin;
 use App\Http\Model\Pression;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\models\admin;
+use App\models\Admin_role;
+use App\models\Role_pression;
+use Illuminate\Support\Facades\DB;
 
-class PressionController extends Controller
+class PressionController extends CeshiController
 {
+
+    public function __construct(Request $request)
+    {
+        parent::__construct($request);
+
+    }
+
     //展示数据
     public function pression_List(){
+        $res = $this->check();
+        if($res=='false'){
+            return view('admin.pre_error');
+        }
         $model=new Pression();
         $res=$model->show();
        return view('admin.press_index',['list'=>$res]);
     }
     //权限分配表单
     public function pression_allot(){
+        $res = $this->check();
+        if($res=='false'){
+            return view('admin.pre_error');
+        }
         $model=new Pression();
         $res=$model->allot();
        // var_dump($res);die;
@@ -71,5 +90,43 @@ class PressionController extends Controller
 
         return view('admin.admin_upform',['list'=>$res[0],'role'=>$result['role']]);
     }
+
+    //用户编辑
+    public function admin_up(Request $request){
+        var_dump(11);die;
+        $unameid=$request->post('uname');
+        $pwd=md5($request->post('pwd')) ;
+        $uptime=strtotime('now');
+        $roleid=$request->post('roleid');
+        $stauts=$request->post('status');
+        $model=new Pression();
+        $res=$model->admin_up($unameid,$pwd,$uptime,$roleid,$stauts);
+        if($res){
+            echo "<script>alert('操作成功');window.location='pression-list';</script>";
+            // return redirect(url(''));
+        }
+    }
+    //角色添加表单
+    public function role_prefor()
+    {
+        $model=new Pression();
+        $res=$model->allot();
+        // var_dump($res);die;
+        return view('admin.role_prefor',['pression'=>$res['pression']]);
+    }
+    //角色添加
+    public function role_preadd(Request $request){
+        $role=$request->post('role');
+        $pression_id=$request->post('pression_id');
+        $pression_id=implode(',',$pression_id);
+        $model=new Pression();
+        $res=$model->role_add($role,$pression_id);
+        if($res){
+            echo "<script>alert('操作成功');window.location='pression-list';</script>";
+        }
+    }
+
+
+
 
 }
