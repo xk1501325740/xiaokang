@@ -99,7 +99,7 @@
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+        	<span class="fl">你好，请<a href="Login.blade.php">登录</a>&nbsp; <a href="Regist.blade.php" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">收藏夹</a>
@@ -147,7 +147,7 @@
 </div>
 <div class="m_top_bg">
     <div class="top">
-        <div class="m_logo"><a href="Index.html"><img src="images/logo1.png" /></a></div>
+        <div class="m_logo"><a href="Index.blade.php"><img src="images/logo1.png" /></a></div>
         <div class="m_search">
             <form>
                 <input type="text" value="" class="m_ipt" />
@@ -159,7 +159,7 @@
             <div class="car_t">购物车 [ <span>3</span> ]</div>
             <div class="car_bg">
                 <!--Begin 购物车未登录 Begin-->
-                <div class="un_login">还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
+                <div class="un_login">还未登录！<a href="Login.blade.php" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
                 <!--End 购物车未登录 End-->
                 <!--Begin 购物车已登录 Begin-->
                 <ul class="cars">
@@ -196,7 +196,7 @@
             	<div class="left_m_t t_bg1">订单中心</div>
                 <ul>
                 	<li><a href="Member_Order.html">我的订单</a></li>
-                    <li><a href="Member_Address.html">收货地址</a></li>
+                    <li><a href="Member_Address.blade.php" class="now">收货地址</a></li>
                     <li><a href="#">缺货登记</a></li>
                     <li><a href="#">跟踪订单</a></li>
                 </ul>
@@ -230,81 +230,118 @@
             </div>
         </div>
 		<div class="m_right">
-        	<div class="m_des">
-            	<table border="0" style="width:870px; line-height:22px;" cellspacing="0" cellpadding="0">
-                  <tr valign="top">
-                    <td width="115"><img src="images/user.jpg" width="90" height="90" /></td>
-                    <td>
-                    	<div class="m_user">TRACY</div>
-                        <p>
-                            等级：注册用户 <br />
-                            <font color="#ff4e00">您还差 270 积分达到 分红100</font><br />
-                            上一次登录时间: 2015-09-28 18:19:47<br />
-                            您还没有通过邮件认证 <a href="#" style="color:#ff4e00;">点此发送认证邮件</a>
-                        </p>
-                        <div class="m_notice">
-                        	用户中心公告！
-                        </div>
-                    </td>
+            <p></p>
+            <div class="mem_tit">收货地址</div>
+			<div class="address">
+            	<div class="a_close"><a href="#"><img src="images/a_close.png" /></a></div>
+            	<table border="0" class="add_t" align="center" style="width:98%; margin:10px auto;" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="2" style="font-size:14px; color:#ff4e00;">杨杨公司</td>
                   </tr>
-                </table>	
+                  <tr>
+                    <td align="right" width="80">收货人姓名：</td>
+                    <td>杨杨</td>
+                  </tr>
+                  <tr>
+                    <td align="right">配送区域：</td>
+                    <td>四川成都市武侯区三环以内</td>
+                  </tr>
+                  <tr>
+                    <td align="right">详细地址：</td>
+                    <td>科华北路66号世外桃源写字楼3楼</td>
+                  </tr>
+                  <tr>
+                    <td align="right">手机：</td>
+                    <td>12345678998</td>
+                  </tr>
+                  <tr>
+                    <td align="right">电话：</td>
+                    <td>028-12345678</td>
+                  </tr>
+                  <tr>
+                    <td align="right">电子邮箱：</td>
+                    <td>123456789@qq.com</td>
+                  </tr>
+                  <tr>
+                    <td align="right">标志建筑：</td>
+                    <td>世外桃源</td>
+                  </tr>
+                </table>
+				
+                <p align="right">
+                	<a href="#" style="color:#ff4e00;">设为默认</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="#" style="color:#ff4e00;">编辑</a>&nbsp; &nbsp; &nbsp; &nbsp; 
+                </p>
+
             </div>
-            
-            <div class="mem_t">资产信息</div>
-            <table border="0" class="mon_tab" style="width:870px; margin-bottom:20px;" cellspacing="0" cellpadding="0">
+
+            <div class="mem_tit">
+            	<a href="#"><img src="images/add_ad.gif" /></a>
+            </div>
+            <table border="0" class="add_tab" style="width:930px;"  cellspacing="0" cellpadding="0">
               <tr>
-                <td width="33%">用户等级：<span style="color:#555555;">普通会员</span></td>
-                <td width="33%">消费金额：<span>￥200元</span></td>
-                <td width="33%">返还积分：<span>99R</span></td>
-              </tr>
-              <tr>
-                <td>账户余额：<span>￥200元</span></td></td>
-                <td>红包个数：<span style="color:#555555;">3个</span></td></td>
-                <td>红包价值：<span>￥50元</span></td></td>
-              </tr>
-              <tr>
-                <td colspan="3">订单提醒：
-                	<font style="font-family:'宋体';">待付款(<span>0</span>) &nbsp; &nbsp; &nbsp; &nbsp; 待收货(<span>2</span>) &nbsp; &nbsp; &nbsp; &nbsp; 待评论(<span>1</span>)</font>
+                <td width="135" align="right">配送地区</td>
+                <td colspan="3" style="font-family:'宋体';">
+                	<select class="jj" name="country" style="background-color:#f6f6f6;">
+                      <option value="0" selected="selected">请选择...</option>
+                      <option value="1">中国</option>
+                      <option value="2">中国</option>
+                      <option value="3">中国</option>
+                      <option value="4">中国</option>
+                    </select>
+                	<select class="jj" name="province">
+                      <option value="0" selected="selected">请选择...</option>
+                      <option value="1">四川</option>
+                      <option value="2">重庆</option>
+                      <option value="3">北京</option>
+                      <option value="4">云南</option>
+                    </select>
+                    <select class="jj" name="city">
+                      <option value="0" selected="selected">请选择...</option>
+                      <option value="1">成都</option>
+                      <option value="2">宜宾</option>
+                      <option value="3">南充</option>
+                      <option value="4">绵阳</option>
+                    </select>
+                    <select class="jj" name="area">
+                      <option value="0" selected="selected">请选择...</option>
+                      <option value="1">武侯区</option>
+                      <option value="2">成华区</option>
+                      <option value="3">锦江区</option>
+                      <option value="4">青羊区</option>
+                    </select>
+                    （必填）
                 </td>
               </tr>
+              <tr>
+                <td align="right">收货人姓名</td>
+                <td style="font-family:'宋体';"><input type="text" value="姓名" class="add_ipt" />（必填）</td>
+                <td align="right">电子邮箱</td>
+                <td style="font-family:'宋体';"><input type="text" value="12345678@qq.com" class="add_ipt" />（必填）</td>
+              </tr>
+              <tr>
+                <td align="right">详细地址</td>
+                <td style="font-family:'宋体';"><input type="text" value="世外桃源" class="add_ipt" />（必填）</td>
+                <td align="right">邮政编码</td>
+                <td style="font-family:'宋体';"><input type="text" value="610000" class="add_ipt" /></td>
+              </tr>
+              <tr>
+                <td align="right">手机</td>
+                <td style="font-family:'宋体';"><input type="text" value="1361234587" class="add_ipt" />（必填）</td>
+                <td align="right">电话</td>
+                <td style="font-family:'宋体';"><input type="text" value="028-12345678" class="add_ipt" /></td>
+              </tr>
+              <tr>
+                <td align="right">标志建筑</td>
+                <td style="font-family:'宋体';"><input type="text" value="世外桃源大酒店" class="add_ipt" /></td>
+                <td align="right">最佳送货时间</td>
+                <td style="font-family:'宋体';"><input type="text" value="" class="add_ipt" /></td>
+              </tr>
             </table>
+           	<p align="right">
+            	<a href="#">删除</a>&nbsp; &nbsp; <a href="#" class="add_b">确认修改</a>
+            </p> 
+           
 
-            <div class="mem_t">账号信息</div>
-            <table border="0" class="acc_tab" style="width:870px;" cellspacing="0" cellpadding="0">
-              <tr>
-                <td class="td_l">用户ID： </td>
-                <td>12345678</td>
-              </tr>
-              <tr>
-                <td class="td_l b_none">身份证号：</td>
-                <td>522124***********8</td>
-              </tr>
-              <tr>
-                <td class="td_l b_none">电  话：</td>
-                <td>186****1234</td>
-              </tr>
-              <tr>
-                <td class="td_l">邮   箱： </td>
-                <td>*******789@qq.com</td>
-              </tr>
-              <tr>
-                <td class="td_l b_none">注册时间：</td>
-                <td>2015/10/10</td>
-              </tr>
-              <tr>
-                <td class="td_l">完成订单：</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td class="td_l b_none">邀请人：</td>
-                <td>邀请人</td>
-              </tr>
-              <tr>
-                <td class="td_l">登录次数：</td>
-                <td>3</td>
-              </tr>
-            </table>
-               
             
         </div>
     </div>

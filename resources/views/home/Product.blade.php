@@ -8,16 +8,27 @@
         <script type="text/javascript">
            EvPNG.fix('div, ul, img, li, input, a'); 
         </script>
-    <![endif]-->   
+    <![endif]-->
     
     <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>    
             
-	<script type="text/javascript" src="js/lrscroll_1.js"></script>
-        
-    
-	<script type="text/javascript" src="js/n_nav.js"></script>   
+	<script type="text/javascript" src="js/lrscroll_1.js"></script>   
      
+    
+	<script type="text/javascript" src="js/n_nav.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/ShopShow.css" />
+    <link rel="stylesheet" type="text/css" href="css/MagicZoom.css" />
+    <script type="text/javascript" src="js/MagicZoom.js"></script>
+    
+    <script type="text/javascript" src="js/num.js">
+    	var jq = jQuery.noConflict();
+    </script>
+        
+    <script type="text/javascript" src="js/p_tab.js"></script>
+    
+    <script type="text/javascript" src="js/shade.js"></script>
     
 <title>尤洪</title>
 </head>
@@ -102,7 +113,7 @@
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+        	<span class="fl">你好，请<a href="Login.blade.php">登录</a>&nbsp; <a href="Regist.blade.php" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">收藏夹</a>
@@ -149,7 +160,7 @@
     </div>
 </div>
 <div class="top">
-    <div class="logo"><a href="Index.html"><img src="images/logo.png" /></a></div>
+    <div class="logo"><a href="Index.blade.php"><img src="images/logo.png" /></a></div>
     <div class="search">
     	<form>
         	<input type="text" value="" class="s_ipt" />
@@ -161,7 +172,7 @@
     	<div class="car_t">购物车 [ <span>3</span> ]</div>
         <div class="car_bg">
        		<!--Begin 购物车未登录 Begin-->
-        	<div class="un_login">还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
+        	<div class="un_login">还未登录！<a href="Login.blade.php" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
             <!--End 购物车未登录 End-->
             <!--Begin 购物车已登录 Begin-->
             <ul class="cars">
@@ -436,8 +447,8 @@
             </div>
         </div>  
         <!--End 商品分类详情 End-->                                                     
-    	<ul class="menu_r">                                                                                                                                               
-        	<li><a href="Index.html">首页</a></li>
+    	<ul class="menu_r">
+        	<li><a href="Index.blade.php">首页</a></li>
             <li><a href="Food.html">美食</a></li>
             <li><a href="Fresh.html">生鲜</a></li>
             <li><a href="HomeDecoration.html">家居</a></li>
@@ -450,71 +461,169 @@
     </div>
 </div>
 <!--End Menu End--> 
-<div class="i_bg">    
-    <div class="postion">
+<div class="i_bg">
+	<div class="postion">
     	<span class="fl">全部 > 美妆个护 > 香水 > 迪奥 > 迪奥真我香水</span>
     </div>    
-    <div class="content mar_10">
-    	<!--Begin 特卖 Begin-->
-    	<div class="s_left">
-        	<div class="lim_time">
-        		<div class="lim_sh_bg">
-                	<span class="lim_sh">分享</span>
-                    <a href="#"><img src="images/sh_1.gif" /></a>
-                    <a href="#"><img src="images/sh_2.gif" /></a>
-                    <a href="#"><img src="images/sh_3.gif" /></a>
-                    <a href="#"><img src="images/sh_4.gif" /></a>
-                    <a href="#"><img src="images/sh_5.gif" /></a>
+    <div class="content">
+    	                    
+        <div id="tsShopContainer">
+            <div id="tsImgS"><a href="images/p_big.jpg" title="Images" class="MagicZoom" id="MagicZoom"><img src="images/p_big.jpg" width="390" height="390" /></a></div>
+            <div id="tsPicContainer">
+                <div id="tsImgSArrL" onclick="tsScrollArrLeft()"></div>
+                <div id="tsImgSCon">
+                    <ul>
+                        <li onclick="showPic(0)" rel="MagicZoom" class="tsSelectImg"><img src="images/ps1.jpg" tsImgS="images/ps1.jpg" width="79" height="79" /></li>
+                        <li onclick="showPic(1)" rel="MagicZoom"><img src="images/ps2.jpg" tsImgS="images/ps2.jpg" width="79" height="79" /></li>
+                        <li onclick="showPic(2)" rel="MagicZoom"><img src="images/ps3.jpg" tsImgS="images/ps3.jpg" width="79" height="79" /></li>
+                        <li onclick="showPic(3)" rel="MagicZoom"><img src="images/ps4.jpg" tsImgS="images/ps4.jpg" width="79" height="79" /></li>
+                        <li onclick="showPic(4)" rel="MagicZoom"><img src="images/ps1.jpg" tsImgS="images/ps1.jpg" width="79" height="79" /></li>
+                        <li onclick="showPic(5)" rel="MagicZoom"><img src="images/ps2.jpg" tsImgS="images/ps2.jpg" width="79" height="79" /></li>
+                        <li onclick="showPic(6)" rel="MagicZoom"><img src="images/ps3.jpg" tsImgS="images/ps3.jpg" width="79" height="79" /></li>
+                        <li onclick="showPic(7)" rel="MagicZoom"><img src="images/ps4.jpg" tsImgS="images/ps4.jpg" width="79" height="79" /></li>
+                    </ul>
                 </div>
-                <table border="0" style="width:100%; margin-bottom:50px;" cellspacing="0" cellpadding="0">
-                  <tr valign="top">
-                    <td width="315">
-                    	<div class="lim_name">Dior/迪奥 真我香水</div>
-                        <div class="lim_price">
-                        	<span class="ch_txt">￥5288</span>
-                       		<a href="#" class="ch_a">抢购</a>
-                        </div>
-                        <div class="lim_c">
-                        	<table border="0" style="width:100%; color:#888888;" cellspacing="0" cellpadding="0">
-                              <tr>
-                                <td width="35%">市场价 </td>
-                                <td width="65%">折扣</td>
-                              </tr>
-                              <tr style="font-family:'Microsoft YaHei';">
-                                <td style="text-decoration:line-through;">￥5388</td>                   
-                                <td>8.0</td>
-                              </tr>
-                            </table>
-                        </div>
-                        <div class="lim_c">
-                        	<div class="des_choice">
-                                <span class="fl">型号：</span>
-                                <ul>
-                                    <li class="checked">30ml<div class="ch_img"></div></li>
-                                    <li>50ml<div class="ch_img"></div></li>
-                                    <li>100ml<div class="ch_img"></div></li>
-                                </ul>
-                            </div>
-                            <div class="des_choice">
-                                <span class="fl">颜色：</span>
-                                <ul>
-                                    <li>红色<div class="ch_img"></div></li>
-                                    <li class="checked">白色<div class="ch_img"></div></li>
-                                    <li>黑色<div class="ch_img"></div></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="lim_c">
-                        	<span class="fl">数量：</span><input type="text" value="2" class="lim_ipt" />
-                        </div>
-                        <div class="lim_clock">
-                        	距离团购结束还有<br />
-                            <span>1200 时 30 分 28 秒</span>
-                        </div>
-                    </td>
-                    <td width="525" align="center" style="border-left:1px solid #eaeaea;"><img src="images/tm_big.jpg" width="460" height="460" /></td>
-                  </tr>
-                </table>
+                <div id="tsImgSArrR" onclick="tsScrollArrRight()"></div>
+            </div>
+            <img class="MagicZoomLoading" width="16" height="16" src="images/loading.gif" alt="Loading..." />				
+        </div>
+        
+        <div class="pro_des">
+        	<div class="des_name">
+            	<p>Dior/迪奥 真我香水EDP 克丽丝汀迪奥 全新 30ml</p>
+                “开业巨惠，北京专柜直供”，不光低价，“真”才靠谱！
+            </div>
+            <div class="des_price">
+            	本店价格：<b>￥589</b><br />
+                消费积分：<span>28R</span>
+            </div>
+            <div class="des_choice">
+            	<span class="fl">型号选择：</span>
+                <ul>
+                	<li class="checked">30ml<div class="ch_img"></div></li>
+                    <li>50ml<div class="ch_img"></div></li>
+                    <li>100ml<div class="ch_img"></div></li>
+                </ul>
+            </div>
+            <div class="des_choice">
+            	<span class="fl">颜色选择：</span>
+                <ul>
+                	<li>红色<div class="ch_img"></div></li>
+                    <li class="checked">白色<div class="ch_img"></div></li>
+                    <li>黑色<div class="ch_img"></div></li>
+                </ul>
+            </div>
+            <div class="des_share">
+            	<div class="d_sh">
+                	分享
+                    <div class="d_sh_bg">
+                    	<a href="#"><img src="images/sh_1.gif" /></a>
+                        <a href="#"><img src="images/sh_2.gif" /></a>
+                        <a href="#"><img src="images/sh_3.gif" /></a>
+                        <a href="#"><img src="images/sh_4.gif" /></a>
+                        <a href="#"><img src="images/sh_5.gif" /></a>
+                    </div>
+                </div>
+                <div class="d_care"><a onclick="ShowDiv('MyDiv','fade')">关注商品</a></div>
+            </div>
+            <div class="des_join">
+            	<div class="j_nums">
+                	<input type="text" value="1" name="" class="n_ipt" />
+                    <input type="button" value="" onclick="addUpdate(jq(this));" class="n_btn_1" />
+                    <input type="button" value="" onclick="jianUpdate(jq(this));" class="n_btn_2" />   
+                </div>
+                <span class="fl"><a onclick="ShowDiv_1('MyDiv1','fade1')"><img src="images/j_car.png" /></a></span>
+            </div>            
+        </div>    
+        
+        <div class="s_brand">
+        	<div class="s_brand_img"><img src="images/sbrand.jpg" width="188" height="132" /></div>
+            <div class="s_brand_c"><a href="#">进入品牌专区</a></div>
+        </div>    
+        
+        
+    </div>
+    <div class="content mar_20">
+    	<div class="l_history">
+        	<div class="fav_t">用户还喜欢</div>
+        	<ul>
+            	<li>
+                    <div class="img"><a href="#"><img src="images/his_1.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_2.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>768.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_3.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>680.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_4.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_5.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+        	</ul>
+        </div>
+        <div class="l_list">        	
+            <div class="des_border">
+            	<div class="des_tit">
+                	<ul>
+                    	<li class="current">推荐搭配</li>
+                    </ul>
+                </div>
+                <div class="team_list">
+                	<div class="img"><a href="#"><img src="images/mat_1.jpg" width="160" height="140" /></a></div>
+                	<div class="name"><a href="#">倩碧补水组合套装8折促销</a></div>
+                    <div class="price">
+                    	<div class="checkbox"><input type="checkbox" name="zuhe" checked="checked" /></div>
+                    	<font>￥<span>768.00</span></font> &nbsp; 18R
+                    </div>
+                </div>
+                <div class="team_icon"><img src="images/jia_b.gif" /></div>
+                <div class="team_list">
+                	<div class="img"><a href="#"><img src="images/mat_2.jpg" width="160" height="140" /></a></div>
+                	<div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                    <div class="price">
+                    	<div class="checkbox"><input type="checkbox" name="zuhe" /></div>
+                    	<font>￥<span>749.00</span></font> &nbsp; 18R
+                    </div>
+                </div>
+                <div class="team_icon"><img src="images/jia_b.gif" /></div>
+                <div class="team_list">
+                	<div class="img"><a href="#"><img src="images/mat_3.jpg" width="160" height="140" /></a></div>
+                	<div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                    <div class="price">
+                    	<div class="checkbox"><input type="checkbox" name="zuhe" checked="checked" /></div>
+                    	<font>￥<span>749.00</span></font> &nbsp; 18R
+                    </div>
+                </div>
+                <div class="team_icon"><img src="images/equl.gif" /></div>
+                <div class="team_sum">
+                	套餐价：￥<span>1517</span><br />
+                    <input type="text" value="1" class="sum_ipt" /><br />
+                    <a href="#"><img src="images/z_buy.gif" /></a> 
+                </div>
+                
             </div>
             <div class="des_border">
                 <div class="des_tit">
@@ -588,7 +697,7 @@
                     <td width="175" class="jud_per">
                     	<p>80.0%</p>好评度
                     </td>
-                    <td width="310">
+                    <td width="300">
                     	<table border="0" style="width:100%;" cellspacing="0" cellpadding="0">
                           <tr>
                             <td width="90">好评<font color="#999999">（80%）</font></td>
@@ -604,7 +713,10 @@
                           </tr>
                         </table>
                     </td>
-                    <td width="290" class="jud_bg">您可对已购买商品进行评价<br /><a href="#"><img src="images/btn_jud.gif" /></a></td>
+                    <td width="185" class="jud_bg">
+                    	购买过雅诗兰黛第六代特润精华露50ml的顾客，在收到商品才可以对该商品发表评论
+                    </td>
+                    <td class="jud_bg">您可对已购买商品进行评价<br /><a href="#"><img src="images/btn_jud.gif" /></a></td>
                   </tr>
                 </table>
                 
@@ -665,60 +777,69 @@
                 
           	</div>
             
-        </div>        
-   		<!--End 特卖 End-->
-        
-        <div class="s_right">
-        	<div class="r_history">
-            	<div class="r_his_t">用户还喜欢</div>
-                <ul>
-                    <li>
-                        <div class="img"><a href="#"><img src="images/his_1.jpg" width="185" height="162" /></a></div>
-                        <div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                        <div class="price">
-                            <font>￥<span>368.00</span></font> &nbsp; 18R
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img"><a href="#"><img src="images/his_2.jpg" width="185" height="162" /></a></div>
-                        <div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                        <div class="price">
-                            <font>￥<span>768.00</span></font> &nbsp; 18R
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img"><a href="#"><img src="images/his_3.jpg" width="185" height="162" /></a></div>
-                        <div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                        <div class="price">
-                            <font>￥<span>680.00</span></font> &nbsp; 18R
-                        </div>
-                    </li>
-                </ul>
+            
+        </div>
+    </div>
+    
+    
+    <!--Begin 弹出层-收藏成功 Begin-->
+    <div id="fade" class="black_overlay"></div>
+    <div id="MyDiv" class="white_content">             
+        <div class="white_d">
+            <div class="notice_t">
+                <span class="fr" style="margin-top:10px; cursor:pointer;" onclick="CloseDiv('MyDiv','fade')"><img src="images/close.gif" /></span>
             </div>
-            <div class="sell_hot">
-            	<div class="s_hot_t">
-                	<span class="fl">热销品牌</span>
-                    <span class="h_more fr"><a href="#">更多</a></span>
-                </div>
-                <ul>
-                	<li><a href="#"><img src="images/hb_1.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_2.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_3.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_4.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_5.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_6.jpg" width="160" height="59" /></a></li>
-                    <li><a href="#"><img src="images/hb_7.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_8.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_9.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_10.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_11.jpg" width="160" height="59" /></a></li>
-                	<li><a href="#"><img src="images/hb_12.jpg" width="160" height="59" /></a></li>
-                </ul>
+            <div class="notice_c">
+           		
+                <table border="0" align="center" style="margin-top:;" cellspacing="0" cellpadding="0">
+                  <tr valign="top">
+                    <td width="40"><img src="images/suc.png" /></td>
+                    <td>
+                    	<span style="color:#3e3e3e; font-size:18px; font-weight:bold;">您已成功收藏该商品</span><br />
+                    	<a href="#">查看我的关注 >></a>
+                    </td>
+                  </tr>
+                  <tr height="50" valign="bottom">
+                  	<td>&nbsp;</td>
+                    <td><a href="#" class="b_sure">确定</a></td>
+                  </tr>
+                </table>
+                    
             </div>
         </div>
     </div>    
+    <!--End 弹出层-收藏成功 End-->
     
-       
+    
+    <!--Begin 弹出层-加入购物车 Begin-->
+    <div id="fade1" class="black_overlay"></div>
+    <div id="MyDiv1" class="white_content">             
+        <div class="white_d">
+            <div class="notice_t">
+                <span class="fr" style="margin-top:10px; cursor:pointer;" onclick="CloseDiv_1('MyDiv1','fade1')"><img src="images/close.gif" /></span>
+            </div>
+            <div class="notice_c">
+           		
+                <table border="0" align="center" style="margin-top:;" cellspacing="0" cellpadding="0">
+                  <tr valign="top">
+                    <td width="40"><img src="images/suc.png" /></td>
+                    <td>
+                    	<span style="color:#3e3e3e; font-size:18px; font-weight:bold;">宝贝已成功添加到购物车</span><br />
+                    	购物车共有1种宝贝（3件） &nbsp; &nbsp; 合计：1120元
+                    </td>
+                  </tr>
+                  <tr height="50" valign="bottom">
+                  	<td>&nbsp;</td>
+                    <td><a href="#" class="b_sure">去购物车结算</a><a href="#" class="b_buy">继续购物</a></td>
+                  </tr>
+                </table>
+                    
+            </div>
+        </div>
+    </div>    
+    <!--End 弹出层-加入购物车 End-->
+    
+    
     
     <!--Begin Footer Begin -->
     <div class="b_btm_bg bg_color">
@@ -806,6 +927,7 @@
 
 </body>
 
+<script src="js/ShopShow.js"></script>
 
 <!--[if IE 6]>
 <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
