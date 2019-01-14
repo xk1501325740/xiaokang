@@ -8,18 +8,20 @@
         <script type="text/javascript">
            EvPNG.fix('div, ul, img, li, input, a'); 
         </script>
-    <![endif]-->
+    <![endif]-->    
+    <script type="text/javascript" src="js/jquery-1.11.1.min_044d0927.js"></script>
+	<script type="text/javascript" src="js/jquery.bxslider_e88acd1b.js"></script>
     
     <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>    
-                
-	<script type="text/javascript" src="js/n_nav.js"></script>   
+            
+	<script type="text/javascript" src="js/lrscroll_1.js"></script>
     
-    <script type="text/javascript" src="js/num.js">
-    	var jq = jQuery.noConflict();
-    </script>     
     
-    <script type="text/javascript" src="js/shade.js"></script>
+	<script type="text/javascript" src="js/n_nav.js"></script>    
+    <script type="text/javascript" src="js/milk_ban.js"></script>
+    <script type="text/javascript" src="js/paper_ban.js"></script>
+    <script type="text/javascript" src="js/baby_ban.js"></script>
     
 <title>尤洪</title>
 </head>
@@ -104,7 +106,7 @@
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+        	<span class="fl">你好，请<a href="Login.blade.php">登录</a>&nbsp; <a href="Regist.blade.php" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">收藏夹</a>
@@ -151,7 +153,7 @@
     </div>
 </div>
 <div class="top">
-    <div class="logo"><a href="Index.html"><img src="images/logo.png" /></a></div>
+    <div class="logo"><a href="Index.blade.php"><img src="images/logo.png" /></a></div>
     <div class="search">
     	<form>
         	<input type="text" value="" class="s_ipt" />
@@ -163,7 +165,7 @@
     	<div class="car_t">购物车 [ <span>3</span> ]</div>
         <div class="car_bg">
        		<!--Begin 购物车未登录 Begin-->
-        	<div class="un_login">还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
+        	<div class="un_login">还未登录！<a href="Login.blade.php" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
             <!--End 购物车未登录 End-->
             <!--Begin 购物车已登录 Begin-->
             <ul class="cars">
@@ -439,7 +441,7 @@
         </div>  
         <!--End 商品分类详情 End-->                                                     
     	<ul class="menu_r">                                                                                                                                               
-        	<li><a href="Index.html">首页</a></li>
+        	<li><a href="Index.blade.php">首页</a></li>
             <li><a href="Food.html">美食</a></li>
             <li><a href="Fresh.html">生鲜</a></li>
             <li><a href="HomeDecoration.html">家居</a></li>
@@ -452,90 +454,198 @@
     </div>
 </div>
 <!--End Menu End--> 
-<div class="i_bg">  
+<div class="i_bg">
+	<div class="postion">
+    	<span class="fl">全部 > 美妆个护 > 香水 > 香奈儿</span>
+    </div>    
     <div class="content mar_20">
-    	<img src="images/img3.jpg" />        
+    	<div class="l_history">
+        	<div class="his_t">
+            	<span class="fl">浏览历史</span>
+                <span class="fr"><a href="#">清空</a></span>
+            </div>
+        	<ul>
+            	<li>
+                    <div class="img"><a href="#"><img src="images/his_1.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_2.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>768.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_3.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>680.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_4.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_5.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+        	</ul>
+        </div>
+        <div class="l_list">
+			<div class="brand_t">所有品牌</div>
+            <div class="list_c">
+            	
+                <ul class="brand">
+                	<li>
+                    	<div class="img"><img src="images/brand1.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>普拉达</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand2.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>劳力士</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand3.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>古奇</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand4.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>迪奥</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand1.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>普拉达</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand2.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>劳力士</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand3.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>古奇</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand4.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>迪奥</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand1.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>普拉达</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand2.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>劳力士</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand3.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>古奇</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand4.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>迪奥</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand1.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>普拉达</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand2.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>劳力士</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand3.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>古奇</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand4.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>迪奥</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand1.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>普拉达</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand2.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>劳力士</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand3.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>古奇</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand4.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>迪奥</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand1.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>普拉达</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand2.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>劳力士</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand3.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>古奇</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand4.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>迪奥</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand1.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>普拉达</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand2.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>劳力士</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand3.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>古奇</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand4.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>迪奥</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand1.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>普拉达</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand2.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>劳力士</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand3.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>古奇</span>（20）</div>
+                    </li>
+                    <li>
+                    	<div class="img"><img src="images/brand4.jpg" width="226" height="108" /></div>
+                        <div class="name"><span>迪奥</span>（20）</div>
+                    </li>
+                </ul>
+                
+                <div class="pages">
+                	<a href="#" class="p_pre">上一页</a><a href="#" class="cur">1</a><a href="#">2</a><a href="#">3</a>...<a href="#">20</a><a href="#" class="p_pre">下一页</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
     </div>
-    
-    <!--Begin 第三步：提交订单 Begin -->
-    <div class="content mar_20">
-    	
-        <!--Begin 银行卡支付 Begin -->
-    	<div class="warning">        	
-            <table border="0" style="width:1000px; text-align:center;" cellspacing="0" cellpadding="0">
-              <tr height="35">
-                <td style="font-size:18px;">
-                	感谢您在本店购物！您的订单已提交成功，请记住您的订单号: <font color="#ff4e00">2015092598275</font>
-                </td>
-              </tr>
-              <tr>
-                <td style="font-size:14px; font-family:'宋体'; padding:10px 0 20px 0; border-bottom:1px solid #b6b6b6;">
-                	您选定的配送方式为: <font color="#ff4e00">申通快递</font>； &nbsp; &nbsp;您选定的支付方式为: <font color="#ff4e00">支付宝</font>； &nbsp; &nbsp;您的应付款金额为: <font color="#ff4e00">￥888.00</font>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px 0 30px 0; font-family:'宋体';">
-                	银行名称 收款人信息：全称 ××× ；帐号或地址 ××× ；开户行 ×××。 <br />
-                    注意事项：办理电汇时，请在电汇单“汇款用途”一栏处注明您的订单号。
-                </td>
-              </tr>
-              <tr>
-                <td>
-                	<a href="#">首页</a> &nbsp; &nbsp; <a href="#">用户中心</a>
-                </td>
-              </tr>
-            </table>        	
-        </div>
-        <!--Begin 银行卡支付 Begin -->
-        
-        <!--Begin 支付宝支付 Begin -->
-    	<div class="warning">        	
-            <table border="0" style="width:1000px; text-align:center;" cellspacing="0" cellpadding="0">
-              <tr height="35">
-                <td style="font-size:18px;">
-                	感谢您在本店购物！您的订单已提交成功，请记住您的订单号: <font color="#ff4e00">2015092598275</font>
-                </td>
-              </tr>
-              <tr>
-                <td style="font-size:14px; font-family:'宋体'; padding:10px 0 20px 0; border-bottom:1px solid #b6b6b6;">
-                	您选定的配送方式为: <font color="#ff4e00">申通快递</font>； &nbsp; &nbsp;您选定的支付方式为: <font color="#ff4e00">银行卡</font>； &nbsp; &nbsp;您的应付款金额为: <font color="#ff4e00">￥888.00</font>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px 0 30px 0; font-family:'宋体';">
-                	支付宝网站(www.alipay.com) 是国内先进的网上支付平台。<br />
-                    支付宝收款接口：在线即可开通，零预付，免年费，单笔阶梯费率，无流量限制。<br />
-                    <a href="#" style="color:#ff4e00;">立即在线申请</a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                	<div class="btn_u" style="margin:0 auto; padding:0 20px; width:120px;"><a href="#">立即使用支付宝支付</a></div>
-                	<a href="#">首页</a> &nbsp; &nbsp; <a href="#">用户中心</a>
-                </td>
-              </tr>
-            </table>        	
-        </div>
-        <!--Begin 支付宝支付 Begin -->
-        
-        <!--Begin 余额不足 Begin -->
-    	<div class="warning">        	
-            <table border="0" style="width:1000px; text-align:center;" cellspacing="0" cellpadding="0">
-              <tr>
-                <td>
-                	<p style="font-size:22px;">提示 !</p>
-                    <b style="color:#ff4e00; font-size:16px; font-family:'宋体';">您的余额不足以支付整个订单，请选择其他支付方式</b>
-                	<div class="backs"><a href="#">返回上一页</a></div>
-                </td>
-              </tr>
-            </table>        	
-        </div>
-        <!--Begin 余额不足 Begin -->
-        
-        
-    </div>
-	<!--End 第三步：提交订单 End--> 
-    
     
     <!--Begin Footer Begin -->
     <div class="b_btm_bg bg_color">

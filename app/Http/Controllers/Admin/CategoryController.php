@@ -6,6 +6,52 @@ use App\Http\Model\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+<<<<<<< HEAD
+
+class CategoryController extends Controller
+{
+    //展示分类数据
+    public function category_list(){
+        $tab = new Category();
+        $res=$tab->show();
+        return view('admin.category_list',['data'=>$res]);
+    }
+
+    //添加页面
+    public function category_add(){
+        $tab = new Category();
+        $res=$tab->show();
+        return view('admin.category_add',['data'=>$res]);
+    }
+
+    // 添加页面 接收值
+    public function category_add_sub(Request $request){
+        $data['category_name'] = $request->post('category_name');
+        $data['category_code'] = $request->post('category_code');
+        $data['parent_id'] = $request->post('parent_id');
+        $data['category_level'] = $request->post('category_level');
+        $data['modified_time'] = date('Y-h-d:H-i-s');
+        $data['category_status'] = $request->post('category_status');
+        if(empty($data['category_name'])){ echo "<script>alert('不能为空1');location.href='http://shops.com/admin/add'</script>"; }
+        if(empty($data['category_code'])){ echo "<script>alert('不能为空2');location.href='http://shops.com/admin/add'</script>"; }
+        if(empty($data['category_level'])){ echo "<script>alert('不能为空4');location.href='http://shops.com/admin/add'</script>"; }
+        if(empty($data['category_status'])){ echo "<script>alert('不能为空6');location.href='http://shops.com/admin/add'</script>"; }
+        $model = new Category();
+        $list = $model->show();
+      foreach ($list as $k => $v ){
+          if($data['category_name'] == $v['category_name']){
+              echo "<script>alert('分类已经存在');location.href='http://shops.com/admin/add'</script>";
+          }
+      }
+        $res = $model ->ins($data);
+       if($res){
+           echo "<script>alert('添加成功');location.href='http://shops.com/admin/add'</script>";
+       }else{
+           echo "<script>alert('添加失败');location.href='http://shops.com/admin/add'</script>";
+       }
+    }
+
+=======
 use App\models\admin;
 use App\models\Admin_role;
 use App\models\Role_pression;
@@ -61,6 +107,7 @@ class CategoryController extends CeshiController
         }
     }
 
+>>>>>>> 4ba53fb3577fb1449ad6d063cb2b25557fd68e8a
     //删除
     public function category_del(Request $request){
         $id = $request->get('id');

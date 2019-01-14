@@ -8,20 +8,15 @@
         <script type="text/javascript">
            EvPNG.fix('div, ul, img, li, input, a'); 
         </script>
-    <![endif]-->    
-    <script type="text/javascript" src="js/jquery-1.11.1.min_044d0927.js"></script>
-	<script type="text/javascript" src="js/jquery.bxslider_e88acd1b.js"></script>
+    <![endif]-->
     
     <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>    
             
 	<script type="text/javascript" src="js/lrscroll_1.js"></script>
-        
     
-	<script type="text/javascript" src="js/n_nav.js"></script>    
-    <script type="text/javascript" src="js/milk_ban.js"></script>
-    <script type="text/javascript" src="js/paper_ban.js"></script>
-    <script type="text/javascript" src="js/baby_ban.js"></script>
+    
+	<script type="text/javascript" src="js/n_nav.js"></script>
     
 <title>尤洪</title>
 </head>
@@ -106,7 +101,7 @@
         </span>
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+        	<span class="fl">你好，请<a href="Login.blade.php">登录</a>&nbsp; <a href="Regist.blade.php" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">收藏夹</a>
@@ -153,7 +148,7 @@
     </div>
 </div>
 <div class="top">
-    <div class="logo"><a href="Index.html"><img src="images/logo.png" /></a></div>
+    <div class="logo"><a href="Index.blade.php"><img src="images/logo.png" /></a></div>
     <div class="search">
     	<form>
         	<input type="text" value="" class="s_ipt" />
@@ -165,7 +160,7 @@
     	<div class="car_t">购物车 [ <span>3</span> ]</div>
         <div class="car_bg">
        		<!--Begin 购物车未登录 Begin-->
-        	<div class="un_login">还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
+        	<div class="un_login">还未登录！<a href="Login.blade.php" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
             <!--End 购物车未登录 End-->
             <!--Begin 购物车已登录 Begin-->
             <ul class="cars">
@@ -441,7 +436,7 @@
         </div>  
         <!--End 商品分类详情 End-->                                                     
     	<ul class="menu_r">                                                                                                                                               
-        	<li><a href="Index.html">首页</a></li>
+        	<li><a href="Index.blade.php">首页</a></li>
             <li><a href="Food.html">美食</a></li>
             <li><a href="Fresh.html">生鲜</a></li>
             <li><a href="HomeDecoration.html">家居</a></li>
@@ -455,410 +450,332 @@
 </div>
 <!--End Menu End--> 
 <div class="i_bg">
-	<div class="content">
-    	<div class="cate_nav">
-        	<dl>
-            	<dt><a href="#">奶粉尿裤</a></dt>
-                <dd><a href="#">奶粉系列</a></dd>
-                <dd><a href="#">纸尿裤</a></dd>
-                <dd><a href="#">婴儿湿巾</a></dd>
-            </dl>
-            <dl>
-            	<dt><a href="#">洗护哺育</a></dt>
-                <dd><a href="#">洗发沐浴</a></dd>
-                <dd><a href="#">衣物清洁</a></dd>
-                <dd><a href="#">婴儿</a></dd>    
-                <dd><a href="#">护肤</a></dd>
-            </dl>
-            <dl>
-            	<dt><a href="#">辅食营养</a></dt>
-                <dd><a href="#">孕妈洗护</a></dd>
-                <dd><a href="#">待产系列</a></dd>
-                <dd><a href="#">母乳喂养</a></dd>
-            </dl>
-            <dl>
-            	<dt><a href="#">辅食营养品</a></dt>
-                <dd><a href="#">感官认知</a></dd>
-                <dd><a href="#">早教益智</a></dd>
-                <dd><a href="#">积木模型</a></dd>
-            </dl>
-            <dl>
-            	<dt><a href="#">童车/床/汽座</a></dt>
-                <dd><a href="#">婴儿手推车</a></dd>
-                <dd><a href="#">出行用品</a></dd>
-                <dd><a href="#">婴儿床/餐椅</a></dd>
-            </dl>
-        </div>
-		<!--Begin Banner Begin-->
-    	<div class="nban">    	
-            <div class="top_slide_wrap">
-                <ul class="slide_box bxslider">
-                    <li><img src="images/nban.jpg" width="977" height="401" /></li>
-                    <li><img src="images/nban.jpg" width="977" height="401" /></li> 
-                    <li><img src="images/nban.jpg" width="977" height="401" /></li> 
-                </ul>	
-                <div class="op_btns clearfix">
-                    <a href="#" class="op_btn op_prev"><span></span></a>
-                    <a href="#" class="op_btn op_next"><span></span></a>
-                </div>        
+	<div class="postion">
+    	<span class="fl">全部 > 美妆个护 > 香水 > </span>
+        <span class="n_ch">
+            <span class="fl">品牌：<font>香奈儿</font></span>
+            <a href="#"><img src="images/s_close.gif" /></a>
+        </span>
+    </div>
+    <!--Begin 筛选条件 Begin-->
+    <div class="content mar_10">
+    	<table border="0" class="choice" style="width:100%; font-family:'宋体'; margin:0 auto;" cellspacing="0" cellpadding="0">
+          <tr valign="top">
+            <td width="70">&nbsp; 品牌：</td>
+            <td class="td_a"><a href="#" class="now">香奈儿（Chanel）</a><a href="#">迪奥（Dior）</a><a href="#">范思哲（VERSACE）</a><a href="#">菲拉格慕（Ferragamo）</a><a href="#">兰蔻（LANCOME）</a><a href="#">爱马仕（HERMES）</a><a href="#">卡文克莱（Calvin Klein）</a><a href="#">古驰（GUCCI）</a><a href="#">宝格丽（BVLGARI）</a><a href="#">阿迪达斯（Adidas）</a><a href="#">卡尔文·克莱恩（CK）</a><a href="#">凌仕（LYNX）</a><a href="#">大卫杜夫（Davidoff）</a><a href="#">安娜苏（Anna sui）</a><a href="#">阿玛尼（ARMANI）</a><a href="#">娇兰（Guerlain）</a></td>
+          </tr>
+          <tr valign="top">
+            <td>&nbsp; 价格：</td>                                                                                                       
+            <td class="td_a"><a href="#">0-199</a><a href="#" class="now">200-399</a><a href="#">400-599</a><a href="#">600-899</a><a href="#">900-1299</a><a href="#">1300-1399</a><a href="#">1400以上</a></td>
+          </tr>                                              
+          <tr>
+            <td>&nbsp; 类型：</td>
+            <td class="td_a"><a href="#">女士香水</a><a href="#">男士香水</a><a href="#">Q版香水</a><a href="#">组合套装</a><a href="#">香体走珠</a><a href="#">其它</a></td>
+          </tr>                                          
+          <tr>
+            <td>&nbsp; 香型：</td>                                       
+            <td class="td_a"><a href="#">浓香水</a><a href="#">香精Parfum香水</a><a href="#">淡香精EDP淡香水</a><a href="#">香露EDT</a><a href="#">古龙水</a><a href="#">其它</a></td>
+          </tr>                                                             
+        </table>                                                                                 
+    </div>
+    <!--End 筛选条件 End-->
+    
+    <div class="content mar_20">
+    	<div class="l_history">
+        	<div class="his_t">
+            	<span class="fl">浏览历史</span>
+                <span class="fr"><a href="#">清空</a></span>
             </div>
-        </div>
-        <script type="text/javascript">
-        //var jq = jQuery.noConflict();
-        (function(){
-            $(".bxslider").bxSlider({
-                auto:true,
-                prevSelector:jq(".top_slide_wrap .op_prev")[0],nextSelector:jq(".top_slide_wrap .op_next")[0]
-            });
-        })();
-        </script>
-        <!--End Banner End-->        
-    </div>
-    <div class="content mar_15">
-    	<ul class="cate">
-        	<li><a href="CategoryList.html"><img src="images/ca_1.jpg" width="295" height="220" /></a></li>
-            <li><a href="CategoryList.html"><img src="images/ca_2.jpg" width="295" height="220" /></a></li>
-            <li><a href="CategoryList.html"><img src="images/ca_3.jpg" width="295" height="220" /></a></li>
-            <li><a href="CategoryList.html"><img src="images/ca_4.jpg" width="295" height="220" /></a></li>
-        </ul>
-    </div>
-    <!--Begin 热卖爆款商品 Begin-->
-    <div class="i_t mar_10">
-    	<span class="fl">热卖爆款商品</span>
-        <span class="fr">TOP .10</span>
-    </div>    
-    <div class="like">        	
-        <div id="featureContainer1">
-            <div id="feature1">
-                <div id="block1">
-                    <div id="botton-scroll1">
-                        <ul class="featureUL">
-                            <li class="featureBox">
-                                <div class="box">
-                                    <div class="imgbg">
-                                        <a href="#"><img src="images/bk_1.jpg" width="160" height="136" /></a>
-                                    </div>                                        
-                                    <div class="name">
-                                        <a href="#">
-                                        <h2>德国进口</h2>
-                                        德亚全脂纯牛奶200ml*48盒
-                                        </a>
-                                    </div>
-                                    <div class="price">
-                                        <font>￥<span>189</span></font> &nbsp; 26R
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="featureBox">
-                                <div class="box">
-                                    <div class="imgbg">
-                                        <a href="#"><img src="images/bk_2.jpg" width="160" height="136" /></a>
-                                    </div>                                        
-                                    <div class="name">
-                                        <a href="#">
-                                        <h2>iphone 6S</h2>
-                                        Apple/苹果 iPhone 6s Plus公开版
-                                        </a>
-                                    </div>
-                                    <div class="price">
-                                        <font>￥<span>5288</span></font> &nbsp; 25R
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="featureBox">
-                                <div class="box">
-                                    <div class="imgbg">
-                                        <a href="#"><img src="images/bk_3.jpg" width="160" height="136" /></a>
-                                    </div>                                        
-                                    <div class="name">
-                                        <a href="#">
-                                        <h2>倩碧特惠组合套装</h2>
-                                        倩碧补水组合套装8折促销
-                                        </a>
-                                    </div>
-                                    <div class="price">
-                                        <font>￥<span>368</span></font> &nbsp; 18R
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="featureBox">
-                                <div class="box">
-                                    <div class="imgbg">
-                                        <a href="#"><img src="images/bk_4.jpg" width="160" height="136" /></a>
-                                    </div>                                        
-                                    <div class="name">
-                                        <a href="#">
-                                        <h2>品利特级橄榄油</h2>
-                                        750ml*4瓶装组合 西班牙原装进口
-                                        </a>
-                                    </div>
-                                    <div class="price">
-                                        <font>￥<span>280</span></font> &nbsp; 30R
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="featureBox">
-                                <div class="box">
-                                    <div class="imgbg">
-                                        <a href="#"><img src="images/bk_5.jpg" width="160" height="136" /></a>
-                                    </div>                                        
-                                    <div class="name">
-                                        <a href="#">
-                                        <h2>品利特级橄榄油</h2>
-                                        750ml*4瓶装组合 西班牙原装进口
-                                        </a>
-                                    </div>
-                                    <div class="price">
-                                        <font>￥<span>280</span></font> &nbsp; 30R
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+        	<ul>
+            	<li>
+                    <div class="img"><a href="#"><img src="images/his_1.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
                     </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_2.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>768.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_3.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>680.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_4.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="images/his_5.jpg" width="185" height="162" /></a></div>
+                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="price">
+                    	<font>￥<span>368.00</span></font> &nbsp; 18R
+                    </div>
+                </li>
+        	</ul>
+        </div>
+        <div class="l_list">
+        	<div class="list_t">
+            	<span class="fl list_or">
+                	<a href="#" class="now">默认</a>
+                    <a href="#">
+                    	<span class="fl">销量</span>                        
+                        <span class="i_up">销量从低到高显示</span>
+                        <span class="i_down">销量从高到低显示</span>                                                     
+                    </a>
+                    <a href="#">
+                    	<span class="fl">价格</span>                        
+                        <span class="i_up">价格从低到高显示</span>
+                        <span class="i_down">价格从高到低显示</span>     
+                    </a>
+                    <a href="#">新品</a>
+                </span>
+                <span class="fr">共发现120件</span>
+            </div>
+            <div class="list_c">
+            	
+                <ul class="cate_list">
+                	<li>
+                    	<div class="img"><a href="#"><img src="images/per_1.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_2.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_3.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_4.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_5.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_6.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_7.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_8.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_9.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_10.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_11.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_12.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_5.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_6.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_7.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_8.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_9.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_10.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_11.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="img"><a href="#"><img src="images/per_12.jpg" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span>198.00</span></font> &nbsp; 26R
+                        </div>
+                        <div class="name"><a href="#">香奈儿邂逅清新淡香水50ml</a></div>
+                        <div class="carbg">
+                        	<a href="#" class="ss">收藏</a>
+                            <a href="#" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="pages">
+                	<a href="#" class="p_pre">上一页</a><a href="#" class="cur">1</a><a href="#">2</a><a href="#">3</a>...<a href="#">20</a><a href="#" class="p_pre">下一页</a>
                 </div>
-                <a class="l_prev" href="javascript:void();">Previous</a>
-                <a class="l_next" href="javascript:void();">Next</a>
+                
+                
+                
             </div>
         </div>
     </div>
-    <!--End 热卖爆款商品 End-->
-    <!--Begin 奶粉辅食 Begin-->
-    <div class="i_t mar_10">
-    	<span class="fl t_color">奶粉辅食</span>
-        <span class="i_mores fr"><a href="#">营养品</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">孕妈背带裤</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">儿童玩具</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">婴儿床</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">喂奶器</a></span>               
-    </div>
-    <div class="content">
-    	<div class="milk_ban">
-            <div id="imgPlaym">
-                <ul class="imgs" id="actorm">
-                    <li><a href="#"><img src="images/milk_ban.jpg" width="228" height="418" /></a></li>
-                    <li><a href="#"><img src="images/milk_ban.jpg" width="228" height="418" /></a></li>
-                    <li><a href="#"><img src="images/milk_ban.jpg" width="228" height="418" /></a></li>
-                </ul>
-                <div class="prevm">上一张</div>
-                <div class="nextm">下一张</div>
-            </div>        
-        </div>
-        <div class="milk_right">
-        	<ul>
-            	<li>
-                    <div class="img"><a href="#"><img src="images/milk_1.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/milk_2.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/milk_3.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/milk_4.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/milk_5.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/milk_6.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/milk_7.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/milk_8.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--End 奶粉辅食 End-->
-    <!--Begin 尿裤湿巾 Begin-->
-    <div class="i_t mar_10">
-    	<span class="fl t_color">尿裤湿巾</span>
-        <span class="i_mores fr"><a href="#">营养品</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">孕妈背带裤</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">儿童玩具</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">婴儿床</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">喂奶器</a></span>
-    </div>
-    <div class="content">
-    	<div class="paper_ban">
-            <div id="imgPlaypa">
-                <ul class="imgs" id="actorpa">
-                    <li><a href="#"><img src="images/paper_ban.jpg" width="228" height="418" /></a></li>
-                    <li><a href="#"><img src="images/paper_ban.jpg" width="228" height="418" /></a></li>
-                    <li><a href="#"><img src="images/paper_ban.jpg" width="228" height="418" /></a></li>
-                </ul>
-                <div class="prevpa">上一张</div>
-                <div class="nextpa">下一张</div>
-            </div>        
-        </div>
-        <div class="milk_right">
-        	<ul>
-            	<li>
-                    <div class="img"><a href="#"><img src="images/pa_1.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pa_2.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pa_3.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pa_4.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pa_5.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pa_6.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pa_7.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pa_8.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--End 尿裤湿巾 End-->
-    <!--Begin 宝宝洗护 Begin-->
-    <div class="i_t mar_10">
-    	<span class="fl t_color">宝宝洗护</span>
-        <span class="i_mores fr"><a href="#">营养品</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">孕妈背带裤</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">儿童玩具</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">婴儿床</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">喂奶器</a></span>
-    </div>
-    <div class="content">
-    	<div class="bb_ban">
-            <div id="imgPlayba">
-                <ul class="imgs" id="actorba">
-                    <li><a href="#"><img src="images/bb_ban.jpg" width="228" height="418" /></a></li>
-                    <li><a href="#"><img src="images/bb_ban.jpg" width="228" height="418" /></a></li>
-                    <li><a href="#"><img src="images/bb_ban.jpg" width="228" height="418" /></a></li>
-                </ul>
-                <div class="prevba">上一张</div>
-                <div class="nextba">下一张</div>
-            </div>        
-        </div>
-        <div class="milk_right">
-        	<ul>
-            	<li>
-                    <div class="img"><a href="#"><img src="images/pro1.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pro2.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pro3.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pro4.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pro5.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pro6.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pro7.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/pro8.jpg" width="185" height="155" /></a></div>
-                	<div class="name"><a href="#">Topfer特福芬 德国原装进口</a></div>
-                    <div class="price">
-                    	<font>￥<span>260.00</span></font> &nbsp; 20R
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>    
-    <!--End 宝宝洗护 End-->    
     
     <!--Begin Footer Begin -->
     <div class="b_btm_bg bg_color">
