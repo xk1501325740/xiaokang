@@ -5,36 +5,47 @@ namespace App\Http\Controllers\admin;
 use App\models\attribute;
 use App\models\goods_master;
 use App\models\goods_pic;
+
 use App\models\sku;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Qiniu\Auth;
 use Qiniu\Storage\UploadManager;
+use App\models\admin;
+use App\models\Admin_role;
+use App\models\Role_pression;
 
-class GoodsController extends Controller
+
+class GoodsController extends CeshiController
 {
+    public $url = [];
+    public $goods_master ;
+    public $goods_pic ;
+    public $attribute;
+    public $sku;
 
-     public $goods_master ;
-     public $goods_pic ;
-     public $attribute;
-     public $sku;
+   public function __construct(Request $request)
+   {
+       parent::__construct($request);
+       $this->goods_master = new goods_master();
+       $this->goods_pic = new  goods_pic();
+       $this->attribute = new attribute();
+       $this->sku = new sku();
+   }
 
-     public function __construct()
-     {
-            $this->goods_master = new goods_master();
-            $this->goods_pic = new  goods_pic();
-            $this->attribute = new attribute();
-            $this->sku = new sku();
-
-     }
 
     //展示数据
     public function goods_List(){
+        $res = $this->check();
+        if($res=='false'){
+            return view('admin.pre_error');
+        }
+            return view('admin.goods-list');
 
-        return view('admin.goods-list');
 
     }
+
 
 
     public function goods_onedata(Request $request){
@@ -122,27 +133,24 @@ class GoodsController extends Controller
             }
 
                 //SKU
-            //var_dump( $data['attr_name'] );
-
-            //var_dump( $data['attr_values'] );
 
             $attr_id = [];
             foreach( $data['attr_name'] as  $k=>$v){
-                //var_dump($v);
+
                   $attr_values = explode(',',$data['attr_values'][$k]);
-                 // var_dump($attr_values);
+
                   foreach($attr_values as $values){
                       $attr['attr_name'] = $v;
                       $attr['attr_value'] = $values;
                       $attr['status'] = 1;
-                      //var_dump($attr);
+
                      $a_id =  $this->attribute->insertGetId($attr);
                       $attr_id[$k][] = $a_id;
                   }
 
 
             }
-             //var_dump($attr_id);
+
              $sku = $this->CartesianProduct( $attr_id );
              for($ii=0;$ii<count($sku);$ii++){
                  $this->sku->insert(['goods_id'=>$res ,'properties'=>$sku[$ii] ,'price'=>1111]);
@@ -152,6 +160,8 @@ class GoodsController extends Controller
 
 
         }
+
+
     }
 
     /**

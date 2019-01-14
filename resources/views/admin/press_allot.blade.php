@@ -1,5 +1,6 @@
 @extends('app')
 @section('') @show
+@section('biaoti', '权限分配')
 @section('button1')
     @parent
         <form action="{{url('admin/pallot')}}" method="post">

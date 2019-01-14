@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('') @show
+@section('biaoti', '权限用户展示')
 @section('button1')
     @parent
     <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">

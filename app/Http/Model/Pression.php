@@ -66,4 +66,18 @@ class Pression extends Model
             return $res;
         }
 
+    public function admin_up($unameid,$pwd,$uptime,$roleid,$stauts){
+        DB::beginTransaction();
+        try{
+            $admin=DB::update("update admin set password='$pwd',update_time=$uptime,status=$stauts  where id=$unameid ");
+            $admin_role=DB::update("update admin_role set role_id=$roleid where admin_id=$unameid ");
+            DB::commit();
+            return $admin_role;
+        }catch (Exception $e){
+            DB::rollback();
+            throw  $e;
+        }
+    }
+
+
 }
