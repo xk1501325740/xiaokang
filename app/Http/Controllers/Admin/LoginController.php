@@ -41,7 +41,7 @@ class LoginController extends Controller
         $login = new admin();
         session(['name' => $request->get('name')]);
         Redis::set('name',$request->get('name')); #输出testRedis
-       $res = $login->login( $request->get('name'), $request->get('pwd'));
+        $res = $login->login( $request->get('name'), $request->get('pwd'));
         if( $res ){
           echo '成功';
         }else{
