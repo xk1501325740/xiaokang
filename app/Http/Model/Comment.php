@@ -19,11 +19,11 @@ class Comment extends Model
 
     //评论展示
     public function c_list(){
-      return  DB::select("select * from users inner join comment on comment.user_id=users.id inner join goods_master on goods_master.goods_id=comment.commod_id  ");
+      return  DB::select("select * from user inner join comment on comment.user_id=user.id inner join goods_master on goods_master.goods_id=comment.commod_id  ");
     }
     //根据商品进行评论编辑   页面
     public function c_edit($commod_id){
-        return DB::select("select * from comment inner join users on users.id=comment.user_id inner join goods_master on comment.commod_id=goods_master.goods_id  where commod_id=$commod_id ");
+        return DB::select("select * from comment inner join user on user.id=comment.user_id inner join goods_master on comment.commod_id=goods_master.goods_id  where commod_id=$commod_id ");
     }
     //追加评论
     public function c_addedit($uname,$goods,$content,$img,$c_time){

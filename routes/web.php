@@ -135,6 +135,7 @@ Route::group(['namespace' => 'Admin'], function(){
 
 
 Route::group(['namespace' => 'Home'], function(){
+    //登陆
     Route::get('home/login','loginController@login');
     Route::get('home/login_sub','loginController@login_sub');
     //注册
@@ -142,7 +143,7 @@ Route::group(['namespace' => 'Home'], function(){
     Route::get('home/regist_sub','loginController@regist_sub');
     //前台
     Route::get('home/index','indexController@index');
-    Route::get('home/produce','indexController@produce');
+    Route::get('home/product','indexController@product');
     //购物车//生成订单//提交订单
     Route::get('home/buycar','buycarController@buycar');
     Route::get('home/buycar_two','buycarController@buycar_two');
@@ -150,10 +151,10 @@ Route::group(['namespace' => 'Home'], function(){
     //品牌
     Route::get('home/brand','brandController@brand');
     Route::get('home/brand_list','brandController@brand_list');
-    /*//分类
-    Route::get('home/category','brandController@category');
+    //分类
+    //Route::get('home/category','brandController@category');
     Route::get('home/category_list','brandController@category_list');
-    //个人管理中心
+   /* //个人管理中心
     Route::get('home/member','memberController@member');
     //个人地址管理
     Route::get('home/member_address','memberController@member_address');

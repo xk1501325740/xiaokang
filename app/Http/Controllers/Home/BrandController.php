@@ -11,8 +11,23 @@ class BrandController extends Controller
     {
         return view('home.brand');
     }
-    public function brandlist()
+    public function brand_list()
     {
-        return view('home.brand_list');
+        return view('home.Brand_List');
     }
+    public function category()
+    {
+        return view('home.Category');
+    }
+    public function category_list()
+    {
+        return view('home.Category_List');
+    }
+
+
+
+
+
+
+
 }

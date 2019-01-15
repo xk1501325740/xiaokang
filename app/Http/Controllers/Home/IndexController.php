@@ -14,6 +14,6 @@ class IndexController extends Controller
     }
     public function product()
     {
-        return view('home.product');
+        return view('home.Product');
     }
 }
