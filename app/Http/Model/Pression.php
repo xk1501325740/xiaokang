@@ -46,7 +46,7 @@ class Pression extends Model
         }
         return $res;
     }
-    //角色添加
+    //用户添加
     public function adminadd($uname,$pwd,$c_time,$status,$role){
         DB::beginTransaction();
         try{
@@ -60,22 +60,38 @@ class Pression extends Model
             throw $e;
         }
     }
-    //角色表单编辑
+    //用户表单编辑
         public function adminupfor($admin_id,$role_id){
             $res=DB::select("select * from admin inner join admin_role on admin_role.role_id=$role_id inner join role on role.id = $role_id where admin.id=$admin_id");
             return $res;
         }
+        //用户编辑
+    public function admin_up($unameid,$uptime,$roleid,$status){
 
-    public function admin_up($unameid,$pwd,$uptime,$roleid,$stauts){
         DB::beginTransaction();
         try{
-            $admin=DB::update("update admin set password='$pwd',update_time=$uptime,status=$stauts  where id=$unameid ");
-            $admin_role=DB::update("update admin_role set role_id=$roleid where admin_id=$unameid ");
+            $admin=DB::table('admin')->where('id',$unameid)->update(['status'=>$status,'update_time'=>$uptime]);
+            $admin_role=DB::table('admin_role')->where('admin_id',$unameid)->update(['role_id'=>$roleid]);
             DB::commit();
-            return $admin_role;
+            return $admin;
         }catch (Exception $e){
             DB::rollback();
             throw  $e;
+        }
+    }
+    //角色添加
+    public function role_add($role,$pression_id)
+    {
+        DB::beginTransaction();
+        try{
+            $role=DB::insert("insert into role values(null,'$role')");
+            $role_id=DB::getPdo()->lastInsertId();
+            $prerole=DB::insert("insert into role_pression values($role_id,'$pression_id')");
+            DB::commit();
+            return $prerole;
+        }catch(Exception $e){
+            DB::rollback();
+            throw $e;
         }
     }
 

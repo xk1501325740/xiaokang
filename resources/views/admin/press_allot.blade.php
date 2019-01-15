@@ -15,7 +15,7 @@
                                 <option value="{{$val->id}}">{{$val->role}}</option>
                                 @endforeach
                         </select>
-                        <button class="layui-btn-xs layui-btn-normal"><a href="{{url('admin/roleadd')}}">角色添加</a></button>
+                        <button class="layui-btn-xs layui-btn-normal"><a href="{{url('admin/role_prefor')}}">角色添加</a></button>
                     </td>
                 </tr>
                 <tr>

@@ -9,6 +9,7 @@ class BrandController extends Controller
 {
     public function brand()
     {
+
         return view('home.brand');
     }
     public function brand_list()

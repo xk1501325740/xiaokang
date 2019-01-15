@@ -13,6 +13,7 @@
             <th width="80" align="center">名称</th>
             <th width="80" align="center">角色</th>
             <th width="80" align="center">添加日期</th>
+            <th width="80" align="center">修改日期</th>
             <th width="80" align="center">状态</th>
             <th width="80" align="center">操作</th>
         </tr>
@@ -23,12 +24,12 @@
             <td align="center">{{$val->username}}</td>
             <td align="center">{{$val->role}}</td>
             <td><a href="product.php?rec=edit&id=15">{{date("Y-m-d H:i:s",$val->create_time)}}</a></td>
-            <td align="center"><a href="product.php?cat_id=3">{{$val->status==1 ?'已激活':'待激活' }}</a></td>
+            <td><a href="product.php?rec=edit&id=15">{{date("Y-m-d H:i:s",$val->update_time)}}</a></td>
+            <td align="center"><a href="javascript:;" id="status">{{$val->status==1 ?'激活':'待激活' }}</a></td>
             <td align="center">
                 <a href="{{url('admin/adminup')}}?admin={{$val->admin_id}}&role={{$val->role_id}}">编辑</a> | <a href="product.php?rec=del&id=15">删除</a>
             </td>
         </tr>
         @endforeach
-
     </table>
 @endsection

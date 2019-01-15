@@ -16,11 +16,10 @@ class PressionController extends CeshiController
     public function __construct(Request $request)
     {
         parent::__construct($request);
-
     }
-
     //展示数据
     public function pression_List(){
+
         $res = $this->check();
         if($res=='false'){
             return view('admin.pre_error');
@@ -93,17 +92,15 @@ class PressionController extends CeshiController
 
     //用户编辑
     public function admin_up(Request $request){
-        var_dump(11);die;
-        $unameid=$request->post('uname');
-        $pwd=md5($request->post('pwd')) ;
+
+        $unameid=$request->post('unameid');
         $uptime=strtotime('now');
-        $roleid=$request->post('roleid');
+        $roleid=$request->post('role');
         $stauts=$request->post('status');
         $model=new Pression();
-        $res=$model->admin_up($unameid,$pwd,$uptime,$roleid,$stauts);
+        $res=$model->admin_up($unameid,$uptime,$roleid,$stauts);
         if($res){
             echo "<script>alert('操作成功');window.location='pression-list';</script>";
-            // return redirect(url(''));
         }
     }
     //角色添加表单
@@ -116,6 +113,7 @@ class PressionController extends CeshiController
     }
     //角色添加
     public function role_preadd(Request $request){
+        //var_dump($request->post());die;
         $role=$request->post('role');
         $pression_id=$request->post('pression_id');
         $pression_id=implode(',',$pression_id);
